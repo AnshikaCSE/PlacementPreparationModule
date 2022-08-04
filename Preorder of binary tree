@@ -1,0 +1,15 @@
+class Solution {
+    public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> pre = new LinkedList<Integer>();
+        return helper(pre,root);
+    }
+    public List<Integer> helper(List <Integer> pre,TreeNode root){
+        if(root==null){
+            return pre;
+        }
+        pre.add(root.val);
+        helper(pre,root.left);
+        helper(pre,root.right);
+        return pre;
+    }
+}
